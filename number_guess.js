@@ -1,11 +1,11 @@
 let randomNumber;
 let userGuesses = [];
 let attempts = 0;
-let remaining = 10;
+let remaining = 15;
 let maxGuesses;
 
 function init() {
-    randomNumber = Math.floor(Math.random() * 10 + 1);
+    randomNumber = Math.floor(Math.random() * 15 + 1);
     document.querySelector("#newGameButton").style.display = "none";
     document.querySelector('#gameArea').style.display = 'none';
     console.log(randomNumber)
