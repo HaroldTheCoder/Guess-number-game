@@ -57,22 +57,34 @@ function compareGuess() {
         document.querySelector("#guessInput").value = "";
         document.querySelector('#textOutput').style.color = '#FFA900';
     } else { 
-        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! <br> &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
+        document.querySelector("#textOutput").innerHTML = "CONGRATULATIONS! <br> You've guessed the number! <br> &#127881 &#127881 &#127881 <br> <br> Your attemps: " + attempts;
         document.querySelector('#textOutput').style.color = '#0fab63';
+        document.querySelector('#statsContainer').style.display = 'none';
+        document.querySelector('#guessInput').style.display = 'none';
+        document.querySelector('.game-instructions').style.display = 'none';
         gameEnded();
     }
    } else {
        if (userGuess > randomNumber) {
-        document.querySelector('#textOutput').innerHTML = "You lose. &#128546 <br> The number was: " + randomNumber;
+        document.querySelector('#textOutput').innerHTML = "YOU LOSE! <br> Try again next time. &#128546 <br> <br> The number was: " + randomNumber;
         document.querySelector('#textOutput').style.color = '#f51905';
+        document.querySelector('#statsContainer').style.display = 'none';
+        document.querySelector('#guessInput').style.display = 'none';
+        document.querySelector('.game-instructions').style.display = 'none';
         gameEnded();
     } else if(userGuess < randomNumber){
-        document.querySelector('#textOutput').innerHTML = "You lose. &#128546 <br> The number was: " + randomNumber;
+        document.querySelector('#textOutput').innerHTML = "YOU LOSE! <br> Try again next time. &#128546 <br> <br> The number was: " + randomNumber;
         document.querySelector('#textOutput').style.color = '#f51905';
+        document.querySelector('#statsContainer').style.display = 'none';
+        document.querySelector('#guessInput').style.display = 'none';
+        document.querySelector('.game-instructions').style.display = 'none';
         gameEnded();
     } else { 
-        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! <br> &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
+        document.querySelector("#textOutput").innerHTML = "CONGRATULATIONS! <br> You've guessed the number. <br> &#127881 &#127881 &#127881 <br> <br> Your attemps: " + attempts;
         document.querySelector('#textOutput').style.color = '#0fab63';
+        document.querySelector('#statsContainer').style.display = 'none';
+        document.querySelector('#guessInput').style.display = 'none';
+        document.querySelector('.game-instructions').style.display = 'none';
         gameEnded();
     }
    }
@@ -83,4 +95,5 @@ init();
 document.querySelector("#guessInput").addEventListener("change", () => {
       compareGuess();
 });
+
 
