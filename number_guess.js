@@ -1,7 +1,7 @@
 let randomNumber;
 let userGuesses = [];
 let attempts = 0;
-let remaining = 15;
+let remaining = 10;
 let maxGuesses;
 
 function init() {
