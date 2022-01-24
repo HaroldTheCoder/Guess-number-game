@@ -9,10 +9,13 @@
     padding: 10px 15px;
     background-color: #06090a;
     border: 2px solid #007474 !important;
-    
+}
+.lead {
+    font-size: 1.2em !important;
+    font-weight: 400 !important;
 }
 @media screen and (max-width: 800px) {
-  
+ 
     .game-container {
         width: 100%  !important;
         max-width: 100% !important;
