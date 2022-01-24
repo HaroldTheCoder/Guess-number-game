@@ -1,7 +1,7 @@
 let randomNumber;
 let userGuesses = [];
 let attempts = 0;
-let remaining = 10;
+let remaining;
 let maxGuesses;
 
 function init() {
@@ -25,11 +25,13 @@ document.querySelector("#newGameButton").addEventListener('click', ()=> {
 document.querySelector('#easyModeButton').addEventListener('click', ()=> {
     startGame()
     maxGuesses = 10;
+    remaining = 10;
 });
 
 document.querySelector("#hardModeButton").addEventListener("click", ()=> {
 	startGame();
     maxGuesses = 5;
+    remaining = 5;
 });
 
 function compareGuess() {
@@ -38,6 +40,7 @@ function compareGuess() {
     document.querySelector('#guesses').innerHTML = userGuesses;
     attempts++;
     remaining--;
+
     document.querySelector('#remaining').innerHTML = remaining;
 
    if (attempts < maxGuesses) {
