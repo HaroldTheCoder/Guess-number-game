@@ -1,0 +1,22 @@
+.game-container {
+    background-color: #0c1013 !important;
+    box-shadow: 0px 15px 15px #1013149a;
+    width: 75%  !important;
+    max-width: 75% !important;
+}
+#remaining, #guesses{
+    padding: 10px 15px;
+    background-color: #06090a;
+    
+}
+@media screen and (max-width: 800px) {
+    .game-container {
+        width: 100%  !important;
+        max-width: 100% !important;
+    }
+    #easyModeButton, #hardModeButton,
+    #guessInput, #newGameButton {
+        width: 100%  !important;
+        max-width: 100% !important;
+    }
+}

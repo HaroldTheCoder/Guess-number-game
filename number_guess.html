@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="number_guess.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"rel="stylesheet"/>
+	</head>
+	<body class="bg-dark">
+		<main class="container d-flex justify-content-center align-content-center vh-100 py-5 text-light text-center">
+			<div class="game-container rounded">
+				<header id="welcomeScreen" class="main-header pt-5">
+					<h1 class="text-uppercase pt-5">Guess the number</h1>
+					<p class="lead">Guess the number between 1 and 10</p>
+					<div class="button-container p-5">
+						<h4 class="py-4">Select game difficulty</h4>
+						<button type="button" id="easyModeButton" class="btn btn-lg btn-success d-block w-50 my-2 mx-auto">Easy (10 Attempts)</button>
+						<button type="button" id="hardModeButton" class="btn btn-lg btn-warning d-block w-50 my-2 mx-auto">Hard (5 Attempts)</button>
+					</div>
+				</header>
+
+				<div id="gameArea" class="game-area px-5">
+					<section class="py-5">
+						<h2 id="textOutput">Your Guess</h2>
+						<p>Enter a number and press Enter or use the Arrows</p>
+						<div id="inputBox" class="form-group py-5">
+							<input  type="number" id="guessInput" class="form-control w-50 mx-auto" min="1" max="10"/>
+						</div>
+					</section>
+
+					<section class="stats py-5">
+						<div class="info d-md-flex justify-content-between py-3">
+							<p class="lead">Attempts remaining:</p>
+							<span id="remaining" class="lead rounded">0</span>
+						</div>
+						<div class="info d-md-flex justify-content-between py-3">
+							<p class="lead">Previous guesses:</p>
+							<span id="guesses" class="lead rounded">-</span>
+						</div>
+					</section>
+					<button id="newGameButton" class="btn btn-primary w-50 my-5 mx-auto text-uppercase">New Game</button>
+				</div>
+			</div>
+		</main>
+
+		<script src="number_guess.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
