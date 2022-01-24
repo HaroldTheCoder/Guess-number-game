@@ -1,27 +1,31 @@
+// Declare global variables with empty values
 let randomNumber;
 let userGuesses = [];
 let attempts = 0;
 let remaining;
 let maxGuesses;
 
+// Initiate game function
 function init() {
     randomNumber = Math.floor(Math.random() * 15 + 1);
     document.querySelector("#newGameButton").style.display = "none";
     document.querySelector('#gameArea').style.display = 'none';
     console.log(randomNumber)
 }
+// Start the game
 function startGame() {
     document.querySelector('#welcomeScreen').style.display = 'none';
     document.querySelector("#gameArea").style.display = "block";
 }
+// Finish the game
 function gameEnded() {
     document.querySelector("#newGameButton").style.display = "block";
     document.querySelector("#guessInput").setAttribute('readonly', "readonly");
 }
+// Buttons [New Game, Easy Mode, Hard Mode]
 document.querySelector("#newGameButton").addEventListener('click', ()=> {
     window.location.reload();
-})
-    
+})   
 document.querySelector('#easyModeButton').addEventListener('click', ()=> {
     startGame()
     maxGuesses = 10;
@@ -34,13 +38,13 @@ document.querySelector("#hardModeButton").addEventListener("click", ()=> {
     remaining = 5;
 });
 
+// Compares user guess input with computer random number
 function compareGuess() {
     const userGuess = Number(document.querySelector('#guessInput').value)
     userGuesses.push(" " + userGuess);
     document.querySelector('#guesses').innerHTML = userGuesses;
     attempts++;
     remaining--;
-
     document.querySelector('#remaining').innerHTML = remaining;
 
    if (attempts < maxGuesses) {
@@ -53,7 +57,7 @@ function compareGuess() {
         document.querySelector("#guessInput").value = "";
         document.querySelector('#textOutput').style.color = '#FFA900';
     } else { 
-        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
+        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! <br> &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
         document.querySelector('#textOutput').style.color = '#0fab63';
         gameEnded();
     }
@@ -67,7 +71,7 @@ function compareGuess() {
         document.querySelector('#textOutput').style.color = '#f51905';
         gameEnded();
     } else { 
-        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
+        document.querySelector("#textOutput").innerHTML = "Congratulations, you've guessed the number! <br> &#127881 &#127881 &#127881 <br> Your attemps: " + attempts;
         document.querySelector('#textOutput').style.color = '#0fab63';
         gameEnded();
     }
@@ -75,6 +79,7 @@ function compareGuess() {
 }
 init();
 
+// Controls the input value
 document.querySelector("#guessInput").addEventListener("change", () => {
       compareGuess();
 });
