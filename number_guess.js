@@ -7,7 +7,7 @@ let maxGuesses;
 
 // Initiate game function
 function init() {
-    randomNumber = Math.floor(Math.random() * 15 + 1);
+    randomNumber = Math.floor(Math.random() * 20 + 1);
     document.querySelector("#newGameButton").style.display = "none";
     document.querySelector('#gameArea').style.display = 'none';
     console.log(randomNumber)
